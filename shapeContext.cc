@@ -70,6 +70,27 @@ hungarian_problem::solve()
 			slack[y] = lx[root] + ly[y] - cost[root][y];
 			slackx[y] = root;
 		}
+
+		while (1)
+		{
+			while (rd < wr)
+			{
+				int x =  q[rd++];
+				for (int y = 0; y < max_match; y++)
+					if (cost_matrix.at<int>(x,y) == lx[x]+ly[y] && !T[y])
+					{
+						if (yx[y] == -1)
+							break;
+						T[y] = true;
+						q[wr++] = yx[y];
+						add_to_tree(yx[y], x);
+					}
+				if (y < n) break;
+			}
+			if (y < n) break;
+
+			update_labels();
+		}
 	}
 }
 
