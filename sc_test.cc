@@ -3,13 +3,18 @@
 #include <opencv2/core/core.hpp>
 
 using namespace std;
+
 int main()
 {
-/*	cv::Mat cost_matrix;
-	cv::Mat assigment_matrix;
-	assigment_matrix = point_assignment_for_sc(cost_matrix);
+	const int N = 3;
+	int cost[N][N] = {{7,4,3},{3,1,2},{3,0,0}};
+	cv::Mat cost_mat(N, N, CV_32SC1,cost);
 
-	cout << cost_matrix << assigment_matrix << endl;
-	cout << "done!" << endl; */
+	hungarian_problem p(cost_mat, 1);
+	p.print_cost_matrix();
+
+	p.solve();
+	p.print_assigment_array();
+
 	return 0;
 }
