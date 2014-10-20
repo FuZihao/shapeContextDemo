@@ -30,8 +30,9 @@ return assigment_matrix;
 
 hungarian_problem::hungarian_problem(const cv::Mat& cost_mat, int mode)
 {
-	max_match = cost_matrix.cols;
+
 	cost_matrix =  cost_mat;
+	max_match = cost_matrix.cols;
 	assignment_array.resize(max_match, 0);
 	xy.resize(max_match, -1);
 	yx.resize(max_match, -1);
