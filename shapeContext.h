@@ -29,7 +29,7 @@ private:
 	vector<bool> S, T;
 	vector<int> slack, slackx;
 	vector<int> prev;
-	const int max_match;
+	int max_match;
 
 	void update_labels();
 	void add_to_tree(int x, int prevx);
