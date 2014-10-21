@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS =  -Wall `pkg-config --cflags opencv`
+CFLAGS = -Wall `pkg-config --cflags opencv`
 LDFLAGS = `pkg-config --libs opencv`
 
 OBJS = shapeContext.o \

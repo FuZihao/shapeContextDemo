@@ -3,11 +3,9 @@
 
 #include <iostream>
 #include <opencv2/core/core.hpp>
-/*
-void add_to_tree(int x, int prevx);
-void update_labels();
-cv::Mat point_assignment_for_sc(const cv::Mat& cost_matrix);
-*/
+#include <vector>
+
+using namespace std;
 
 class hungarian_problem {
 public:
@@ -17,7 +15,7 @@ public:
 	
 	void solve();
 	void print_cost_matrix();
-	void print_assigment_matrix();
+	void print_assigment_array();
 	void print_status();
 
 private:
