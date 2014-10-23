@@ -6,6 +6,7 @@
 #include <vector>
 
 using namespace std;
+using namespace cv;
 
 class hungarian_problem {
 public:
@@ -20,6 +21,8 @@ public:
 
 private:
 	cv::Mat cost_matrix;
+        cv::Mat min_cost_matrix;
+        cv::Mat max_cost_matrix;
 	vector<int> assignment_array;
 
 	vector<int> xy, yx;
@@ -28,6 +31,7 @@ private:
 	vector<int> slack, slackx;
 	vector<int> prev;
 	int max_match;
+        int mode;
 
 	void update_labels();
 	void add_to_tree(int x, int prevx);
